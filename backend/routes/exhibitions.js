@@ -13,7 +13,7 @@ const exhibitionRouter = express.Router();
 exhibitionRouter.route("/").get(getExhibitions).post(createExhibition);
 exhibitionRouter
 	.route("/:id")
-	.get(getExhibitions)
+	.get(getExhibition)
 	.put(updateExhibition)
 	.delete(deleteExhibition);
 
