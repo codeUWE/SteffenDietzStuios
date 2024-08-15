@@ -1,0 +1,19 @@
+div.copyright {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	padding: 0.5rem;
+	background-color: rgba(0, 0, 0, 0.05);
+	position: relative;
+	font-size: 0.8rem;
+	color: var(--text-color);
+}
+
+div.copyright p {
+	margin: 0;
+}
+
+div.copyright p.legalNotice {
+	text-decoration: underline;
+	cursor: pointer;
+}

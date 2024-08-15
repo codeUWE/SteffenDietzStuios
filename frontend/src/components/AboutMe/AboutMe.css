@@ -1,1 +1,44 @@
-M
+div.aboutPage {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 90vh;
+}
+
+div.about {
+	width: 90%;
+	margin: 5rem auto;
+	display: flex;
+	flex-direction: column;
+}
+
+div.aboutPicture {
+	width: 100%;
+	height: 250px;
+	border-radius: 10px 10px 0 0;
+}
+
+div.aboutPicture img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center 35%;
+	border-radius: 10px 10px 0 0;
+}
+
+div.aboutText {
+	padding: 1em;
+	border: 1px solid #606060;
+	border-radius: 0 0 10px 10px;
+}
+
+div.aboutText h2 {
+	font-size: 1.7rem;
+	font-weight: 600;
+}
+
+div.aboutText p {
+	font-size: 1.2rem;
+	font-family: "Jost";
+	font-weight: 400;
+}

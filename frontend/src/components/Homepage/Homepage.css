@@ -1,0 +1,81 @@
+:root {
+	--text-color: #211f1f;
+}
+
+div.paintings {
+	width: 100%;
+	margin: 6rem auto 4rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+div.paintings div.painting {
+	width: 85%;
+	display: flex;
+	justify-content: center;
+}
+
+div.paintings img {
+	width: 100%;
+}
+
+div.paintings div.paintingInfo {
+	width: 85%;
+	line-height: 25%;
+	padding-left: 3px;
+	color: rgb(149, 149, 149);
+}
+
+div.paintings div.paintingInfo h2 {
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+div.paintings div.paintingInfo h3 {
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+div.paintings div.paintingInfo p {
+	font-size: 0.9rem;
+}
+
+div.actions {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding-bottom: 5rem;
+}
+
+div.actions button {
+	all: unset;
+	padding: 0.2em;
+	text-align: center;
+	font-family: "Albert Sans";
+	background-color: rgb(239, 239, 239);
+	color: gray;
+	width: 40%;
+	border-radius: 10px;
+	margin: 0 auto;
+	font-size: 1.3rem;
+	font-weight: 400;
+	line-height: 100%;
+}
+
+div.actions button:active {
+	all: unset;
+	padding: 0.2em;
+	text-align: center;
+	font-family: "Albert Sans";
+	background-color: var(--text-color);
+	color: whitesmoke;
+	width: 40%;
+	border-radius: 10px;
+	margin: 0 auto;
+	font-size: 1.3rem;
+	font-weight: 400;
+	line-height: 100%;
+}

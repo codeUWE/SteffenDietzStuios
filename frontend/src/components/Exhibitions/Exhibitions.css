@@ -1,0 +1,9 @@
+div.dates {
+	width: 90%;
+	margin: 4rem auto;
+}
+
+div.dates h2 {
+	font-size: 2rem;
+	font-weight: 400;
+}

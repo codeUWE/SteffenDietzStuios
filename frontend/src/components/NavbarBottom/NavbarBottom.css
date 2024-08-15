@@ -1,0 +1,25 @@
+.bottomNav {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	padding: 1rem 0;
+	background-color: white;
+	transition: transform 0.3s ease-in-out;
+	z-index: 1000;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+
+.bottomNav.show {
+	transform: translateY(0);
+}
+
+.bottomNav.hide {
+	transform: translateY(100%);
+}
+
+.bottomNav button {
+	all: unset;
+	cursor: pointer;
+}
