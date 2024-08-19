@@ -30,11 +30,11 @@ const createExhibition = async (req, res) => {
 			title,
 			startDate,
 			endDate,
-			address,
+			streetAndNumber,
+			code,
+			City,
 			eventUrl,
 			googleMapsUrl,
-			description,
-			photos,
 		} = req.body;
 
 		// Datum konvertieren
@@ -45,11 +45,11 @@ const createExhibition = async (req, res) => {
 			title,
 			startDate: formattedStartDate,
 			endDate: formattedEndDate,
-			address,
+			streetAndNumber,
+			code,
+			City,
 			eventUrl,
 			googleMapsUrl,
-			description,
-			photos,
 		});
 
 		res.status(201).json(newExhibition);

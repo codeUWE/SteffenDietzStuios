@@ -24,7 +24,7 @@ div.paintings img {
 
 div.paintings div.paintingInfo {
 	width: 85%;
-	line-height: 25%;
+	line-height: 115%;
 	padding-left: 3px;
 	color: rgb(149, 149, 149);
 }
@@ -32,6 +32,7 @@ div.paintings div.paintingInfo {
 div.paintings div.paintingInfo h2 {
 	font-size: 1.1rem;
 	font-weight: 600;
+	margin: 0;
 }
 
 div.paintings div.paintingInfo h3 {

@@ -26,11 +26,13 @@ const getPainting = async (req, res) => {
 const createPainting = async (req, res) => {
 	try {
 		const {
-			body: { title, description, image_url },
+			body: { title, artist, dimensions, type, image_url },
 		} = req;
 		const newPainting = await Painting.create({
 			title,
-			description,
+			artist,
+			dimensions,
+			type,
 			image_url,
 		});
 		res.status(201).json(newPainting);

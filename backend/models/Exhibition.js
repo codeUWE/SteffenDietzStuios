@@ -13,7 +13,15 @@ const exhibitionSchema = new mongoose.Schema({
 		type: Date,
 		required: true,
 	},
-	address: {
+	streetAndNumber: {
+		type: String,
+		required: true,
+	},
+	code: {
+		type: String,
+		required: true,
+	},
+	City: {
 		type: String,
 		required: true,
 	},
@@ -25,11 +33,6 @@ const exhibitionSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	description: {
-		type: String,
-		required: true,
-	},
-	photos: [{ type: String }],
 });
 
 const Exhibition = mongoose.model("Exhibition", exhibitionSchema);
