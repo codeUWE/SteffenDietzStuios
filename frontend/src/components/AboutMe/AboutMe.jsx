@@ -9,7 +9,7 @@ function AboutMe() {
 				<div className="about">
 					<div className="aboutPicture">
 						<img
-							src="public\assets\artistPicture.jpeg"
+							src="assets\artistPicture.jpeg"
 							alt="Picture of the artist Steffen Dietz"
 						/>
 					</div>
