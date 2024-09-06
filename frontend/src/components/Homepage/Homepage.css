@@ -13,7 +13,7 @@
 
 div.paintings {
 	width: 100%;
-	margin: 25% auto 0;
+	margin: 20% auto 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -119,14 +119,14 @@ div.paintings div.paintingInfo p {
 		margin: 45% auto;
 	}
 
+	div.paintingContainer {
+		width: 100%;
+	}
+
 	div.paintings {
 		width: 45%;
 		margin: 5% auto 0;
 		gap: 2rem;
-	}
-
-	div.paintingContainer {
-		width: 90%;
 	}
 
 	div.paintings div.painting {
@@ -142,7 +142,7 @@ div.paintings div.paintingInfo p {
 /* Styles for Desktops */
 @media (min-width: 1280px) {
 	div.paintings {
-		margin: 4% auto 20px;
+		margin: 2% auto 20px;
 		width: 33%;
 	}
 }
@@ -201,18 +201,18 @@ div.paintings div.paintingInfo p {
 	}
 
 	div.paintings div.paintingInfo h2 {
-		font-size: 1.9rem;
+		font-size: 1.5rem;
 		font-weight: 600;
 		margin: 0;
 	}
 
 	div.paintings div.paintingInfo h3 {
-		font-size: 1.4rem;
+		font-size: 1.2rem;
 		font-weight: 500;
 	}
 
 	div.paintings div.paintingInfo p {
-		font-size: 1.1rem;
+		font-size: 1rem;
 	}
 }
 /* iPad Pro 11 and 12 inch */

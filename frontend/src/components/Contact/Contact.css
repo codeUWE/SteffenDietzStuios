@@ -1,11 +1,12 @@
 .contactMe {
 	width: 100%;
 	height: 70vh;
-	margin: 4% auto 20%;
-	padding: 2rem 2rem;
+	margin: 12% auto 0;
+	padding: 0 2rem 2rem 2rem;
 	color: #555;
 	font-size: 0.9rem;
 	font-weight: 300;
+	overflow: scroll;
 }
 
 label {
@@ -78,7 +79,7 @@ p.statusMessage {
 @media (min-width: 1024px) {
 	.contactMe {
 		width: 60%;
-		padding: 2.5rem 2rem;
+		padding: 0 2rem;
 		margin: 1% auto 0;
 		font-size: 1rem;
 	}
@@ -93,7 +94,7 @@ p.statusMessage {
 	.contactMe {
 		font-size: 0.8rem;
 		width: 50%;
-		margin: 0% auto 6%;
+		margin: 2% auto 0;
 	}
 
 	.submitButton {
@@ -103,20 +104,20 @@ p.statusMessage {
 
 @media (min-width: 1366px) {
 	.contactMe {
-		margin: 0% auto 3%;
+		margin: 3% auto 0;
 	}
 }
 
 @media (min-width: 1440px) {
 	.contactMe {
-		margin: 3% auto;
+		margin: 5% auto 0;
 	}
 }
 
 @media (min-width: 1536px) {
 	.contactMe {
 		font-size: 1rem;
-		margin: 3% auto 0%;
+		margin: 5% auto 0%;
 	}
 }
 

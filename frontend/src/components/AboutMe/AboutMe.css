@@ -28,8 +28,6 @@ div.aboutText {
 	padding: 1em;
 	border: 1px solid #d0d0d0;
 	border-radius: 0 0 10px 10px;
-	height: 350px;
-	overflow: scroll;
 }
 
 div.aboutText h2 {

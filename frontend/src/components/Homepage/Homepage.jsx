@@ -40,12 +40,12 @@ function Homepage() {
 				{!loading && (
 					<div className="paintingContainer">
 						<div className="painting">
-							<img src="assets\Paintings\painting5.png" alt="Paintings" />
+							<img src="assets\Paintings\DUO.jpeg" alt="Paintings" />
 						</div>
 						<div className="paintingInfo">
-							<h2>Origin</h2>
+							<h2>DUO</h2>
 							<h3>Steffen Dietz</h3>
-							<p>2021 // 140x190 // Acryl auf Canvas</p>
+							<p>2024 // 180x130cm // Acryl auf Canvas</p>
 						</div>
 					</div>
 				)}
