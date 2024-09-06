@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Ebene_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.9644 99.3794">
+  <defs>
+    <style>
+      .b {
+        letter-spacing: -.081em;
+      }
+
+      .b, .c {
+        font-family: AlbertSansRoman-Light, 'Albert Sans';
+        font-size: 89.21px;
+        font-variation-settings: 'wght' 300;
+        font-weight: 300;
+      }
+
+      .c {
+        letter-spacing: -.022em;
+      }
+    </style>
+  </defs>
+  <text class="c" transform="translate(.0005 75.8276) scale(.8182 1)"><tspan x="0" y="0">AR</tspan></text>
+  <text class="b" transform="translate(86.0942 75.8276) scale(.7796 1)"><tspan x="0" y="0">T</tspan></text>
+</svg>

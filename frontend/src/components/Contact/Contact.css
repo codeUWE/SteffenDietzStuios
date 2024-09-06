@@ -1,0 +1,158 @@
+.contactMe {
+	width: 100%;
+	height: 70vh;
+	margin: 0 auto;
+	padding: 5rem 2rem;
+	color: #555;
+	font-size: 0.9rem;
+	font-weight: 300;
+}
+
+label {
+	display: block;
+	margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+	width: 100%;
+	padding: 0.5rem;
+	margin-bottom: 0.5rem;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	font-family: "Jost";
+	font-size: 1rem;
+}
+
+textarea {
+	height: 100px;
+	resize: none;
+}
+
+.submitButton {
+	width: 60%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+}
+
+button {
+	all: unset;
+	padding: 0.7rem 1.5rem;
+	color: #666;
+	background-color: #f0f0f0;
+	border: 1px solid #c1c1c1;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100%;
+	text-align: center;
+}
+
+p.statusMessage {
+	text-align: center;
+	font-size: 1rem;
+	margin-top: 2rem;
+}
+
+.statusMessage.success {
+	color: rgb(117, 191, 117);
+}
+
+.statusMessage.error {
+	color: rgb(255, 80, 80);
+}
+
+@media (min-width: 768px) {
+	.contactMe {
+		width: 70%;
+		padding: 5rem 2rem;
+		margin-top: 10%;
+		font-size: 1rem;
+	}
+
+	.submitButton {
+		width: 40%;
+	}
+}
+
+@media (min-width: 1024px) {
+	.contactMe {
+		width: 60%;
+		padding: 2.5rem 2rem;
+		margin: 1% auto 0;
+		font-size: 1rem;
+	}
+
+	.submitButton {
+		width: 40%;
+	}
+}
+
+/* Styles for Desktops */
+@media (min-width: 1280px) {
+	.contactMe {
+		font-size: 0.8rem;
+		width: 50%;
+		margin: 0% auto 6%;
+	}
+
+	.submitButton {
+		width: 40%;
+	}
+}
+
+@media (min-width: 1366px) {
+	.contactMe {
+		margin: 0% auto 3%;
+	}
+}
+
+@media (min-width: 1440px) {
+	.contactMe {
+		margin: 3% auto;
+	}
+}
+
+@media (min-width: 1536px) {
+	.contactMe {
+		font-size: 1rem;
+		margin: 3% auto 0%;
+	}
+}
+
+@media (min-width: 1920px) {
+	.contactMe {
+		font-size: 1rem;
+		width: 40%;
+		margin: 7% auto 0%;
+	}
+}
+
+@media (min-width: 2560px) {
+	.contactMe {
+		font-size: 1.3rem;
+		margin: 8% auto 0%;
+	}
+}
+
+@media only screen and (min-device-width: 834px) and (max-device-width: 1194px) and (orientation: portrait) {
+	.contactMe {
+		padding: 2.5rem 2rem;
+		margin: 16% auto 0;
+		font-size: 1.1rem;
+	}
+
+	.submitButton {
+		width: 40%;
+	}
+}
+
+@media only screen and (min-device-width: 834px) and (max-device-width: 1194px) and (orientation: landscape) {
+	.contactMe {
+		margin: 6% auto;
+	}
+
+	.submitButton {
+		width: 40%;
+	}
+}

@@ -10,13 +10,12 @@ nav {
 
 div.navGrid {
 	width: 100%;
-	padding-left: 0.8rem;
-	padding-right: 1.3rem;
+	padding: 0 1.5rem;
 
 	display: grid;
 	grid-template-rows: 1fr 30px;
-	grid-template-columns: 1fr 2fr;
-	grid-gap: 0 0.5em;
+	grid-template-columns: auto 2fr;
+	grid-gap: 0 0.6em;
 }
 
 .navGrid div.logo {
@@ -28,9 +27,11 @@ div.navGrid {
 	letter-spacing: -5px;
 	line-height: 110%;
 	align-self: end;
+	justify-self: start;
 
 	grid-row: 1 / 3;
 	grid-column: 1 / 2;
+	cursor: pointer;
 }
 
 .navGrid .logo h2 {
@@ -39,8 +40,6 @@ div.navGrid {
 }
 
 .navGrid h3 {
-	display: inline-flex;
-	justify-content: space-between;
 	font-family: "Jost";
 	font-weight: 300;
 	font-size: 1.7rem;
@@ -56,51 +55,60 @@ div.navGrid {
 	grid-column: 2 / 3;
 }
 
-.navGrid h3 span {
-	margin: 0;
-}
-
-div.menu {
+div.menuIcon {
 	justify-self: end;
-
 	grid-row: 1 / 2;
 	grid-column: 2 / 3;
 }
 
-div.menu button {
+div.instagramIcon {
+	display: none;
+}
+
+div.menuIcon button {
 	all: unset;
+}
+
+/* Horizontal Navigation Links for Tablets and Desktops */
+.navGrid .navLinks {
+	display: none; /* Hidden by default */
+}
+
+/* Responsive Design: Keep side menu for smaller screens */
+@media (max-width: 767px) {
+	/* Keep the side menu and menu icon visible on smaller screens */
+	.sideMenu {
+		display: block;
+		position: fixed;
+		right: -300px;
+		top: 0;
+		height: 100%;
+		width: 300px;
+		background-color: rgb(250, 249, 247);
+		color: var(--text-color);
+		transition: right 0.3s ease-in-out;
+		z-index: 1000;
+	}
+
+	.sideMenu.open {
+		right: 0;
+	}
 }
 
 /* side menu styles */
 .closeMenu {
 	position: absolute;
-	top: 30px;
-	right: 10px;
+	top: 25px;
+	right: -145px;
 	background: none;
 	border: none;
 	color: var(--text-color);
 	font-size: 24px;
 }
 
-.sideMenu {
-	position: fixed;
-	right: -300px;
-	top: 0;
-	height: 100%;
-	width: 300px;
-	background-color: rgb(250, 249, 247);
-	color: var(--text-color);
-	transition: right 0.3s ease-in-out;
-	z-index: 1000;
-}
-
-.sideMenu.open {
-	right: 0;
-}
-
 .sideMenu ul {
 	list-style-type: none;
-	font-size: 1.3rem;
+	font-size: 1rem;
 	font-weight: 400;
 	text-align: right;
 	letter-spacing: 3px;
@@ -124,13 +132,12 @@ div.sideActions {
 
 button.contact {
 	all: unset;
-	width: 60%;
-	padding: 0.4em;
-	font-size: 1.3rem;
+	padding: 0.4em 0 0.4em 0.4em;
+	font-size: 1rem;
 	text-align: center;
-	color: whitesmoke;
-	background-color: var(--text-color);
-	border-radius: 10px;
+	color: var(--text-color);
+	background-color: transparent;
+	border-left: 1px solid #808080;
 	font-weight: 400;
 	line-height: 100%;
 	opacity: 0.95;
@@ -138,4 +145,237 @@ button.contact {
 
 .active {
 	font-weight: 800;
+}
+
+/* Styles for Tablets - Portrait*/
+@media (min-width: 768px) {
+	nav {
+		position: sticky;
+		top: 0;
+		background-color: white;
+		padding: 1rem 0 1.3rem;
+		z-index: 2000;
+	}
+
+	div.navGrid {
+		grid-template-columns: auto 0.5fr 2fr;
+		grid-template-rows: auto 1fr;
+		grid-gap: 0.5rem;
+		padding: 0 1.5rem;
+	}
+
+	.navGrid .logo {
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+		justify-self: start;
+	}
+
+	.navGrid h3.currentPage {
+		grid-column: 2 / 3;
+		grid-row: 2 / 3;
+		justify-self: start;
+		margin-top: 0.5rem;
+		font-size: 1.5rem;
+	}
+
+	div.instagramIcon {
+		display: inline;
+		grid-column: 3 / 4;
+		grid-row: 1 / 2;
+		justify-self: end;
+	}
+
+	.navGrid .navLinks {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		grid-column: 3 / 4;
+		grid-row: 2 / 3;
+		justify-self: start;
+		align-self: end;
+		gap: 2rem;
+		font-weight: 400;
+		font-size: 1rem;
+		line-height: 80%;
+		color: var(--text-color);
+		list-style: none;
+		cursor: pointer;
+	}
+
+	.navGrid .navLinks li {
+		position: relative;
+	}
+
+	.navGrid .navLinks li.active::after {
+		content: "";
+		position: absolute;
+		bottom: -10px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: gray;
+	}
+
+	.navGrid .navLinks li.active {
+		font-weight: 400;
+	}
+
+	/* Hide the menu icon on larger screens */
+	.menuIcon {
+		display: none;
+	}
+
+	/* Hide the side menu on larger screens */
+	.sideMenu {
+		display: none;
+	}
+}
+
+/* Styles for Tablets - Landscape*/
+@media (min-width: 1024px) {
+	div.navGrid {
+		grid-template-columns: auto 0.5fr 2fr;
+	}
+
+	.navGrid h3.currentPage {
+		font-size: 1.7rem;
+	}
+
+	.navGrid .navLinks {
+		gap: 4rem;
+		font-weight: 400;
+		font-size: 1.1rem;
+	}
+
+	.navGrid .navLinks li.active::after {
+		content: "";
+		position: absolute;
+		bottom: -10px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: gray;
+	}
+
+	.navGrid .navLinks li.active {
+		font-weight: 400;
+	}
+}
+
+/* Styles for Desktops */
+@media (min-width: 1280px) {
+	div.navGrid {
+		width: 95%;
+		grid-template-columns: auto 0.3fr 2fr;
+		margin: 0 auto;
+	}
+
+	.navGrid .navLinks {
+		margin-left: 2%;
+		gap: 6rem;
+		font-weight: 400;
+		font-size: 1rem;
+	}
+
+	.navGrid h3.currentPage {
+		font-size: 1.4rem;
+	}
+}
+
+@media (min-width: 1366px) {
+	div.navGrid {
+		grid-template-columns: auto 0.34fr 2fr;
+	}
+
+	.navGrid h3.currentPage {
+		font-size: 1.6rem;
+	}
+
+	.navGrid .navLinks {
+		gap: 8rem;
+	}
+}
+
+@media (min-width: 1440px) {
+	div.navGrid {
+		grid-template-columns: auto 0.37fr 2fr;
+	}
+
+	.navGrid h3.currentPage {
+		font-size: 2rem;
+	}
+
+	.navGrid .navLinks {
+		margin-left: 2%;
+		gap: 7rem;
+		font-weight: 400;
+		font-size: 1.1rem;
+	}
+}
+
+@media (min-width: 1680px) {
+	div.navGrid {
+		grid-template-columns: auto 0.5fr 2fr;
+	}
+
+	.navGrid h3.currentPage {
+		font-size: 2rem;
+	}
+
+	.navGrid .navLinks {
+		margin-left: 2%;
+		gap: 8rem;
+		font-weight: 400;
+		font-size: 1.1rem;
+	}
+}
+
+@media (min-width: 1920px) {
+	div.navGrid {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.navGrid h3.currentPage {
+		font-size: 2rem;
+	}
+
+	.navGrid .navLinks {
+		margin-left: 2%;
+		gap: 8rem;
+		font-weight: 400;
+		font-size: 1.3rem;
+	}
+
+	div.instagramIcon svg {
+		width: 35px;
+		height: 35px;
+	}
+}
+
+@media (min-width: 2560px) {
+	div.navGrid {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.navGrid div.logo {
+		font-size: 2.5rem;
+	}
+
+	.navGrid h3.currentPage {
+		font-size: 2.5rem;
+	}
+
+	.navGrid .navLinks {
+		margin-left: 2%;
+		gap: 10rem;
+		font-weight: 400;
+		font-size: 1.4rem;
+	}
+
+	div.instagramIcon svg {
+		width: 45px;
+		height: 45px;
+	}
 }

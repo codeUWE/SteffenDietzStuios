@@ -1,3 +1,4 @@
+import React from "react";
 import "./Navbar.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
@@ -6,6 +7,7 @@ import { useState, useEffect, useRef } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
 import { RiHomeLine } from "react-icons/ri";
+import { PiInstagramLogoThin } from "react-icons/pi";
 
 function Navbar() {
 	const navigate = useNavigate();
@@ -20,12 +22,16 @@ function Navbar() {
 	};
 
 	useEffect(() => {
-		// Access the main element that wraps the main content
+		// Access the main and footer elements that wrap the content
 		const mainContent = document.querySelector("main");
+		const footerContent = document.querySelector("footer");
+
 		if (isMenuOpen) {
 			mainContent.classList.add("blur-background");
+			footerContent.classList.add("blur-background");
 		} else {
 			mainContent.classList.remove("blur-background");
+			footerContent.classList.remove("blur-background");
 		}
 
 		// Add event listener when menu is open
@@ -35,10 +41,11 @@ function Navbar() {
 			document.removeEventListener("mousedown", handleClickOutside);
 		}
 
-		// Cleanup the event listener
+		// Cleanup function to remove event listener and blur effect
 		return () => {
 			document.removeEventListener("mousedown", handleClickOutside);
 			mainContent.classList.remove("blur-background");
+			footerContent.classList.remove("blur-background");
 		};
 	}, [isMenuOpen]);
 
@@ -51,13 +58,9 @@ function Navbar() {
 
 	// Handle link click and close the menu
 	const handleLinkClick = (path) => {
+		window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top
 		navigate(path);
 		setIsMenuOpen(false); // Close the menu
-	};
-
-	// Wraps each character in a span element for custom spacing
-	const wrapCharactersInSpans = (text) => {
-		return text.split("").map((char, index) => <span key={index}>{char}</span>);
 	};
 
 	// Function to determine the current page and apply the corresponding menu item highlight
@@ -71,39 +74,79 @@ function Navbar() {
 			case "/":
 				return "STUDIOS";
 			case "/about":
-				return "ABOUT";
+				return "about";
 			case "/artworks":
-				return "ARTWORKS";
+				return "works";
 			case "/exhibitions":
-				return "EXHIBITIONS";
+				return "exhibitions";
 			case "/contact":
-				return "CONTACT";
+				return "contact";
 			default:
 				return "STUDIOS";
 		}
 	};
 
 	return (
-		<>
-			<nav>
-				<div className="navGrid">
-					<div className="logo" onClick={() => navigate("/")}>
-						<h2>Steffen</h2>
-						<h2>Dietz</h2>
-					</div>
-					<div className="menu">
-						<button onClick={toggleMenu}>
-							<HiMenuAlt3 size={35} />
-						</button>
-					</div>
-					{/* Dynamic text based on the current route */}
-					<h3 className="stretch">
-						{wrapCharactersInSpans(getCurrentPageText())}
-					</h3>
+		<nav>
+			<div className="navGrid">
+				<div className="logo" onClick={() => handleLinkClick("/")}>
+					<h2>Steffen</h2>
+					<h2>Dietz</h2>
 				</div>
-			</nav>
 
-			{/* side menu */}
+				<div className="menuIcon">
+					<button onClick={toggleMenu}>
+						<HiMenuAlt3 size={35} />
+					</button>
+				</div>
+				<div className="instagramIcon">
+					<PiInstagramLogoThin
+						size={30}
+						onClick={() => {
+							const instagramAppLink =
+								"instagram://user?username=steffen.dietz.art";
+							const instagramWebLink =
+								"https://www.instagram.com/steffen.dietz.art/?locale=de&hl=am-et";
+							window.location.href = instagramAppLink;
+							setTimeout(() => {
+								window.location.href = instagramWebLink;
+							}, 1000);
+						}}
+					/>
+				</div>
+
+				<h3 className="currentPage">{getCurrentPageText()}</h3>
+
+				{/* Horizontal menu for tablets and larger screens */}
+				<ul className="navLinks">
+					<li
+						className={isActive("/artworks")}
+						onClick={() => handleLinkClick("/artworks")}
+					>
+						WORKS
+					</li>
+					<li
+						className={isActive("/exhibitions")}
+						onClick={() => handleLinkClick("/exhibitions")}
+					>
+						EXHIBITIONS
+					</li>
+					<li
+						className={isActive("/about")}
+						onClick={() => handleLinkClick("/about")}
+					>
+						ABOUT
+					</li>
+					<li
+						className={isActive("/contact")}
+						onClick={() => handleLinkClick("/contact")}
+					>
+						CONTACT
+					</li>
+				</ul>
+			</div>
+
+			{/* side menu for smaller screens */}
 			<div ref={menuRef} className={`sideMenu ${isMenuOpen ? "open" : ""}`}>
 				<button onClick={toggleMenu} className="closeMenu">
 					<IoCloseOutline size={30} />
@@ -116,19 +159,19 @@ function Navbar() {
 						className={isActive("/about")}
 						onClick={() => handleLinkClick("/about")}
 					>
-						about
+						ABOUT
 					</li>
 					<li
 						className={isActive("/artworks")}
 						onClick={() => handleLinkClick("/artworks")}
 					>
-						artworks
+						WORKS
 					</li>
 					<li
 						className={isActive("/exhibitions")}
 						onClick={() => handleLinkClick("/exhibitions")}
 					>
-						exhibitions
+						EXHIBITIONS
 					</li>
 				</ul>
 				<div className="sideActions">
@@ -136,11 +179,11 @@ function Navbar() {
 						className="contact"
 						onClick={() => handleLinkClick("/contact")}
 					>
-						contact
+						CONTACT
 					</button>
 				</div>
 			</div>
-		</>
+		</nav>
 	);
 }
 

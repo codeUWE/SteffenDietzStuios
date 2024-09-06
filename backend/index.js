@@ -7,17 +7,21 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 3000;
 
-//import Routers
+// Import Routers
 const paintingsRouter = require("./routes/paintings");
 const exhibitionRouter = require("./routes/exhibitions");
+const contactRouter = require("./routes/contact");
 
-//middlewares
+// Middlewares
 app.use(express.json());
+app.use(cors());
 
-//routers
+// Routers
 app.use("/api/paintings", paintingsRouter);
 app.use("/api/exhibitions", exhibitionRouter);
+app.use("/api/contact", contactRouter);
 
+// Start the server
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`);
 });

@@ -1,8 +1,11 @@
+import React from "react";
+
 import "./NavbarBottom.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 // Icons
+import FrameIcon from "../../assets/frame.svg?react";
 import {
 	PiInstagramLogoThin,
 	PiCalendarDotsThin,
@@ -49,7 +52,7 @@ function NavbarBottom() {
 		 */
 		if (
 			location.pathname === "/artworks" ||
-			location.pathname === "/about" ||
+			location.pathname === "/legal-notice" ||
 			location.pathname === "/exhibitions"
 		) {
 			window.addEventListener("scroll", handleScroll);
@@ -65,14 +68,20 @@ function NavbarBottom() {
 		};
 	}, [location.pathname]);
 
+	// Handle link click and close the menu
+	const handleLinkClick = (path) => {
+		window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to the top
+		navigate(path);
+	};
+
 	return (
 		<div
 			className={`bottomNav ${isVisible ? "show" : "hide"}`}
 			style={{
 				position:
 					location.pathname === "/artworks" ||
-					location.pathname === "/about" ||
-					location.pathname === "/exhibitions"
+					location.pathname === "/exhibitions" ||
+					location.pathname === "/legal-notice"
 						? "fixed"
 						: "relative",
 				bottom: 0,
@@ -93,17 +102,24 @@ function NavbarBottom() {
 					}}
 				/>
 			</button>
-			<button>
+			{/* <button>
 				<PiFacebookLogoThin size={30} onClick={() => navigate("/facebook")} />
-			</button>
+			</button> */}
 			<button>
 				<PiCalendarDotsThin
 					size={30}
-					onClick={() => navigate("/exhibitions")}
+					onClick={() => handleLinkClick("/exhibitions")}
 				/>
 			</button>
 			<button>
-				<CiMail size={30} onClick={() => navigate("/contact")} />
+				<FrameIcon
+					width="37"
+					height="37"
+					onClick={() => handleLinkClick("/artworks")}
+				/>
+			</button>
+			<button>
+				<CiMail size={30} onClick={() => handleLinkClick("/contact")} />
 			</button>
 		</div>
 	);

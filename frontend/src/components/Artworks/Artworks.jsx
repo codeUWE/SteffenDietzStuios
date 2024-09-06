@@ -1,68 +1,52 @@
+import React, { useState, useEffect } from "react";
 import "./Artworks.css";
-
 import NavbarBottom from "../NavbarBottom/NavbarBottom.jsx";
 
-//assets
-import painting1 from "../../assets/Paintings/painting1.png";
-import painting2 from "../../assets/Paintings/painting2.png";
-import painting3 from "../../assets/Paintings/painting3.png";
-import painting4 from "../../assets/Paintings/painting4.png";
-import painting5 from "../../assets/Paintings/painting5.png";
-
 function Artworks() {
+	// State to store the fetched paintings data
+	const [paintings, setPaintings] = useState([]);
+	const [loading, setLoading] = useState(true); // State to handle loading status
+
+	// Fetch data from the API when the component mounts
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				// Fetch paintings data from your API endpoint
+				const response = await fetch("/api/paintings"); // Adjust the URL to your actual API route
+				const data = await response.json();
+				setPaintings(data); // Set the fetched data in state
+				setLoading(false); // Turn off loading state
+			} catch (error) {
+				console.error("Error fetching paintings:", error);
+				setLoading(false); // Turn off loading state in case of error
+			}
+		};
+
+		fetchData();
+	}, []);
+
 	return (
 		<>
-			<div id="artworks">
-				<div className="paintings">
-					<div className="painting">
-						<img src={painting1} alt="" />
-					</div>
-					<div className="paintingInfo">
-						<h2>Titel</h2>
-						<h3>Steffen Dietz</h3>
-						<p>140x190 // Acryl auf Canvas</p>
-					</div>
-				</div>
-				<div className="paintings">
-					<div className="painting">
-						<img src={painting2} alt="" />
-					</div>
-					<div className="paintingInfo">
-						<h2>Titel</h2>
-						<h3>Steffen Dietz</h3>
-						<p>140x190 // Acryl auf Canvas</p>
-					</div>
-				</div>
-				<div className="paintings">
-					<div className="painting">
-						<img src={painting3} alt="" />
-					</div>
-					<div className="paintingInfo">
-						<h2>Titel</h2>
-						<h3>Steffen Dietz</h3>
-						<p>140x190 // Acryl auf Canvas</p>
-					</div>
-				</div>
-				<div className="paintings">
-					<div className="painting">
-						<img src={painting4} alt="" />
-					</div>
-					<div className="paintingInfo">
-						<h2>Titel</h2>
-						<h3>Steffen Dietz</h3>
-						<p>140x190 // Acryl auf Canvas</p>
-					</div>
-				</div>
-				<div className="paintings">
-					<div className="painting">
-						<img src={painting5} alt="" />
-					</div>
-					<div className="paintingInfo">
-						<h2>Titel</h2>
-						<h3>Steffen Dietz</h3>
-						<p>140x190 // Acryl auf Canvas</p>
-					</div>
-				</div>
+			<div className="artworks-container">
+				{loading ? (
+					<p>Loading artworks...</p>
+				) : (
+					paintings.map((painting, index) => (
+						<div key={index} className="artwork">
+							<div className="artwork-image">
+								<img
+									src={painting.image_url} // Use the image_url from the backend
+									alt={`${painting.title} by ${painting.artist}`}
+								/>
+							</div>
+							<div className="artwork-info">
+								<h2>{painting.title}</h2>
+								<h3>{painting.artist}</h3>
+								<p>{`${painting.year} // ${painting.dimensions} // ${painting.type}`}</p>
+							</div>
+						</div>
+					))
+				)}
 			</div>
 			<NavbarBottom />
 		</>

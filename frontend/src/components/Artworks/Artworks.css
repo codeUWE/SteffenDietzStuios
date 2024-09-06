@@ -1,4 +1,214 @@
-#artworks {
-	width: 70%;
+/* Container for the entire Artworks section */
+.artworks-container {
+	width: 90%;
 	margin: 0 auto;
+	display: grid;
+}
+
+/* Individual artwork block */
+.artwork {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr; /* One column on mobile by default */
+	grid-template-rows: auto auto; /* Two rows: one for the image, one for the info */
+	gap: 1rem; /* Add some gap between rows */
+	margin: 10rem 0;
+}
+
+.artwork:first-child {
+	margin-top: 25%;
+}
+
+/* Image container within each artwork block */
+.artwork-image {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.artwork-image img {
+	width: 100%;
+}
+
+/* Information container within each artwork block */
+.artwork-info {
+	width: 100%;
+	text-align: left;
+	line-height: 115%;
+	color: rgb(149, 149, 149);
+}
+
+.artwork-info h2 {
+	font-size: 1.1rem;
+	font-weight: 600;
+	margin: 0;
+}
+
+.artwork-info h3 {
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.artwork-info p {
+	font-size: 0.9rem;
+}
+
+/* Responsive styles for tablets and larger screens */
+@media (min-width: 768px) {
+	.artworks-container {
+		width: 70%;
+		margin: 0 auto;
+		display: grid;
+	}
+
+	.artwork:first-child {
+		margin-top: 6%;
+	}
+}
+
+/* Styles for Desktops */
+@media (min-width: 1024px) {
+	.artworks-container {
+		width: 90%;
+		margin: auto;
+		/* gap: 3rem; */
+	}
+
+	.artwork {
+		width: 100%;
+		grid-template-columns: 1fr 2fr; /* Two equal columns */
+		grid-template-rows: 1fr; /* One row, both columns are in the same row */
+	}
+
+	.artwork-image {
+		grid-column: 2 / 3; /* Image on the right side */
+		grid-row: 1/2;
+		width: 65%;
+	}
+
+	.artwork-info {
+		grid-column: 1 / 2; /* Info on the left side */
+		grid-row: 1/2;
+		align-self: flex-end;
+		text-align: right;
+		padding-right: 1rem;
+	}
+
+	.artwork:first-child {
+		margin-top: 3%;
+	}
+}
+
+/* Styles for very large desktops */
+@media (min-width: 1280px) {
+	.artwork-image {
+		width: 50%;
+	}
+
+	.artwork:first-child {
+		margin-top: 3%;
+	}
+}
+
+/* Styles for very large desktops */
+@media (min-width: 1366px) {
+	.artwork-image {
+		width: 50%;
+	}
+
+	.artwork:first-child {
+		margin-top: 3%;
+	}
+}
+
+/* Styles for very large desktops */
+@media (min-width: 1440px) {
+	.artwork-image {
+		width: 60%;
+	}
+
+	.artwork:first-child {
+		margin-top: 3%;
+	}
+}
+
+/* Styles for very large desktops */
+@media (min-width: 1536px) {
+	.artwork-image {
+		width: 53%;
+	}
+
+	.artwork:first-child {
+		margin-top: 3%;
+	}
+}
+
+@media (min-width: 1920px) {
+	.artwork-info h2 {
+		font-size: 1.3rem;
+		font-weight: 600;
+		margin: 0;
+	}
+
+	.artwork-info h3 {
+		font-size: 1.2rem;
+		font-weight: 500;
+	}
+
+	.artwork-info p {
+		font-size: 1rem;
+	}
+}
+
+@media (min-width: 2560px) {
+	.artwork-info h2 {
+		font-size: 1.6rem;
+		font-weight: 600;
+		margin: 0;
+	}
+
+	.artwork-info h3 {
+		font-size: 1.5rem;
+		font-weight: 500;
+	}
+
+	.artwork-info p {
+		font-size: 1.3rem;
+	}
+}
+
+@media only screen and (min-device-width: 834px) and (max-device-width: 1194px) and (orientation: portrait) {
+	.artwork {
+		width: 90%;
+		grid-template-columns: 1fr 3fr; /* Two equal columns */
+		grid-template-rows: 1fr; /* One row, both columns are in the same row */
+	}
+
+	.artwork-image {
+		grid-column: 2 / 3; /* Image on the right side */
+		grid-row: 1/2;
+		width: 100%;
+	}
+
+	.artwork-info {
+		grid-column: 1 / 2; /* Info on the left side */
+		grid-row: 1/2;
+		align-self: flex-end;
+		text-align: right;
+		padding-right: 1rem;
+	}
+
+	.artwork:first-child {
+		margin-top: 15%;
+	}
+}
+
+@media only screen and (min-device-width: 834px) and (max-device-width: 1194px) and (orientation: landscape) {
+	.artwork-image {
+		width: 65%;
+	}
+
+	.artwork:first-child {
+		margin-top: 2%;
+	}
 }

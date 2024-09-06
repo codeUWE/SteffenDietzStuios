@@ -1,8 +1,8 @@
 :root {
 	--upcoming-colorTitle: #373737;
 	--upcoming-colorAddress: #383838;
-	--upcoming-backgroundDate: #373737;
-	--upcoming-borderEvent: #373737;
+	--upcoming-backgroundDate: #666;
+	--upcoming-borderEvent: #666;
 	--upcoming-borderButton: #373737;
 
 	--previous-borderEvent: #d9d9d9;
@@ -36,13 +36,13 @@ div.exhibitions div.exhibitionTitle h2 {
 	margin-bottom: 1rem;
 }
 
-/* style for upcoming events */
 div.upcomingExhibitions {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
 }
 
+/* style for upcoming events */
 div.upcoming div.upcomingEvent {
 	width: 100%;
 	display: flex;
@@ -64,16 +64,7 @@ div.upcoming div.upcomingEvent div.upcomingMain div.upcomingInfo {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-}
-
-div.upcoming
-	div.upcomingEvent
-	div.upcomingMain
-	div.upcomingInfo
-	div.eventSecondary {
-	display: flex;
-	justify-content: space-between;
-	padding-right: 0.4rem;
+	align-items: flex-start;
 }
 
 div.upcoming div.upcomingEvent div.upcomingMain div.upcomingInfo h2 {
@@ -88,44 +79,27 @@ div.upcoming
 	div.upcomingEvent
 	div.upcomingMain
 	div.upcomingInfo
-	div.eventSecondary
-	div.eventAddress {
-	align-self: flex-end;
-}
-div.upcoming
-	div.upcomingEvent
-	div.upcomingMain
-	div.upcomingInfo
-	div.eventSecondary
 	div.eventAddress
 	p {
 	font-size: 0.9rem;
 	color: var(--upcoming-colorAddress);
-	align-self: flex-end;
 }
 
-div.upcoming
-	div.upcomingEvent
-	div.upcomingMain
-	div.upcomingInfo
-	div.eventSecondary
-	div.live {
+div.upcoming div.upcomingEvent div.upcomingMain div.upcomingInfo div.live {
 	display: flex;
-	justify-content: center;
+	justify-content: start;
 	gap: 0.2rem;
 	align-items: center;
-	font-size: 0.6rem;
+	font-size: 0.8rem;
 	font-weight: 700;
 	color: rgb(250, 99, 69);
-	margin: 0.7rem 0 0;
+	margin: 0.2rem 0 0.8rem;
+}
+div.upcoming div.upcomingEvent div.upcomingMain div.upcomingInfo div.live h5 {
+	margin: 0;
 }
 
-div.upcoming
-	div.upcomingEvent
-	div.upcomingMain
-	div.upcomingInfo
-	div.eventSecondary
-	div.hidden {
+div.upcoming div.upcomingEvent div.upcomingMain div.upcomingInfo div.hidden {
 	display: none;
 	visibility: hidden;
 }
@@ -136,8 +110,8 @@ div.upcoming
 	height: 5px;
 	border-radius: 50%;
 
-	-webkit-animation: pulse 600ms infinite alternate;
-	animation: pulse 800ms infinite alternate;
+	-webkit-animation: pulse 500ms infinite alternate;
+	animation: pulse 900ms infinite alternate;
 }
 @-webkit-keyframes pulse {
 	0% {
@@ -156,11 +130,19 @@ div.upcoming
 	}
 }
 
+div.upcoming div.upcomingEvent div.upcomingActionBtn.live {
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.9rem;
+}
 div.upcoming div.upcomingEvent div.upcomingActionBtn {
 	width: 30%;
 	display: flex;
 	flex-direction: column;
-	justify-items: center;
+	justify-content: center;
 	align-items: center;
 	gap: 0.5rem;
 	font-size: 0.9rem;
@@ -172,17 +154,12 @@ div.upcoming div.upcomingEvent div.upcomingActionBtn button {
 	font-weight: 300;
 	border: 1px solid var(--upcoming-borderButton);
 	width: 100%;
+	height: 16px;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	padding: 0.6rem 0rem;
 	border-radius: 5px;
-}
-
-div.upcoming
-	div.upcomingEvent
-	div.upcomingActionBtn
-	button.upcomingViewLocation {
-	padding: 0.3rem 0rem;
 }
 
 div.upcoming div.upcomingEvent div.upcomingDate {
@@ -279,4 +256,69 @@ div.previous div.previousEvent div.previousDate h3 {
 	color: white;
 	font-size: 0.9rem;
 	font-weight: 600;
+}
+
+@media (min-width: 768px) {
+	div.exhibitions {
+		width: 90%;
+		margin: 4rem auto;
+	}
+}
+
+@media (min-width: 1024px) {
+	div.upcoming div.upcomingEvent div.upcomingMain div.upcomingInfo {
+		width: 80%;
+	}
+
+	div.upcoming div.upcomingEvent div.upcomingActionBtn.live {
+		width: 20%;
+	}
+
+	div.upcoming div.upcomingEvent div.upcomingActionBtn {
+		width: 20%;
+	}
+
+	div.previous div.previousEvent div.previousMain div.previousInfo {
+		width: 80%;
+	}
+
+	div.previous div.previousEvent div.previousActionBtn {
+		width: 20%;
+	}
+}
+
+/* Styles for Desktops */
+@media (min-width: 1280px) {
+	div.exhibitions {
+		width: 80%;
+		margin: 4rem auto;
+	}
+}
+
+@media (min-width: 1366px) {
+	div.exhibitions {
+		width: 65%;
+		margin: 4rem auto;
+	}
+}
+
+@media (min-width: 1440px) {
+	div.exhibitions {
+		width: 65%;
+		margin: 4rem auto;
+	}
+}
+
+@media (min-width: 1920px) {
+	div.exhibitions {
+		width: 60%;
+		margin: 4rem auto;
+	}
+}
+
+@media (min-width: 2560px) {
+	div.exhibitions {
+		width: 50%;
+		margin: 4rem auto;
+	}
 }

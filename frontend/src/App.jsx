@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from "react";
+
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
@@ -10,12 +12,12 @@ import Artworks from "./components/Artworks/Artworks";
 import Contact from "./components/Contact/Contact";
 import Exhibitions from "./components/Exhibitions/Exhibitions";
 import LegalNotice from "./components/LegalNotice/LegalNotice";
+import NavbarBottom from "./components/NavbarBottom/NavbarBottom";
 
 function App() {
 	return (
 		<>
 			<Navbar />
-			{/* SPA routes in main */}
 			<main>
 				<Routes>
 					<Route path="/" element={<Homepage />} />
@@ -26,7 +28,10 @@ function App() {
 					<Route path="/legal-notice" element={<LegalNotice />} />
 				</Routes>
 			</main>
-			<Footer />
+			<footer>
+				<NavbarBottom />
+				<Footer />
+			</footer>
 		</>
 	);
 }

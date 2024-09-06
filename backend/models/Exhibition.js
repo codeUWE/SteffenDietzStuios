@@ -21,7 +21,7 @@ const exhibitionSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	City: {
+	city: {
 		type: String,
 		required: true,
 	},

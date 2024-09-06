@@ -3,7 +3,8 @@ const { convertToDate } = require("../utils/dateUtils");
 
 const getExhibitions = async (req, res) => {
 	try {
-		const exhibitions = await Exhibition.find({});
+		// Ausstellungen nach Startdatum sortieren (neuestes zuerst)
+		const exhibitions = await Exhibition.find({}).sort({ startDate: -1 });
 		res.json(exhibitions);
 	} catch (error) {
 		console.error(error);
@@ -13,9 +14,7 @@ const getExhibitions = async (req, res) => {
 
 const getExhibition = async (req, res) => {
 	try {
-		const {
-			params: { id },
-		} = req;
+		const { id } = req.params;
 		const exhibition = await Exhibition.findById(id);
 		res.json(exhibition);
 	} catch (error) {
@@ -32,7 +31,7 @@ const createExhibition = async (req, res) => {
 			endDate,
 			streetAndNumber,
 			code,
-			City,
+			city,
 			eventUrl,
 			googleMapsUrl,
 		} = req.body;
@@ -47,7 +46,7 @@ const createExhibition = async (req, res) => {
 			endDate: formattedEndDate,
 			streetAndNumber,
 			code,
-			City,
+			city,
 			eventUrl,
 			googleMapsUrl,
 		});
@@ -61,11 +60,8 @@ const createExhibition = async (req, res) => {
 
 const updateExhibition = async (req, res) => {
 	try {
-		const {
-			body,
-			params: { id },
-		} = req;
-		const updatedExhibition = await Exhibition.findByIdAndUpdate(id, body, {
+		const { id } = req.params;
+		const updatedExhibition = await Exhibition.findByIdAndUpdate(id, req.body, {
 			new: true,
 		});
 		res.json(updatedExhibition);
@@ -77,9 +73,7 @@ const updateExhibition = async (req, res) => {
 
 const deleteExhibition = async (req, res) => {
 	try {
-		const {
-			params: { id },
-		} = req;
+		const { id } = req.params;
 		const deletedExhibition = await Exhibition.findByIdAndDelete(id);
 		res.json(deletedExhibition);
 	} catch (error) {
