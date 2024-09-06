@@ -5,7 +5,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 // Icons
-import FrameIcon from "../../assets/frame.svg?react";
 import {
 	PiInstagramLogoThin,
 	PiCalendarDotsThin,
@@ -112,9 +111,10 @@ function NavbarBottom() {
 				/>
 			</button>
 			<button>
-				<FrameIcon
-					width="37"
-					height="37"
+				<img
+					src="assets\frame.png"
+					alt="art icon"
+					width={37}
 					onClick={() => handleLinkClick("/artworks")}
 				/>
 			</button>

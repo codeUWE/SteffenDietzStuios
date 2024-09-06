@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import BarLoader from "react-spinners/BarLoader";
 import "./Homepage.css";
 
-//assets
-import painting5 from "../../assets/Paintings/painting5.png";
-
 function Homepage() {
 	const [loading, setLoading] = useState(false);
 
@@ -43,12 +40,12 @@ function Homepage() {
 				{!loading && (
 					<div className="paintingContainer">
 						<div className="painting">
-							<img src={painting5} alt="" />
+							<img src="assets\Paintings\painting5.png" alt="Paintings" />
 						</div>
 						<div className="paintingInfo">
-							<h2>Titel - Year</h2>
+							<h2>Origin</h2>
 							<h3>Steffen Dietz</h3>
-							<p>140x190 // Acryl auf Canvas</p>
+							<p>2021 // 140x190 // Acryl auf Canvas</p>
 						</div>
 					</div>
 				)}

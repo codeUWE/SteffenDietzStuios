@@ -2,9 +2,6 @@ import React from "react";
 
 import "./AboutMe.css";
 
-//assets
-import artistPicture from "../../assets/artistPicture.jpeg";
-
 function AboutMe() {
 	return (
 		<>
@@ -12,7 +9,7 @@ function AboutMe() {
 				<div className="about">
 					<div className="aboutPicture">
 						<img
-							src={artistPicture}
+							src="public\assets\artistPicture.jpeg"
 							alt="Picture of the artist Steffen Dietz"
 						/>
 					</div>

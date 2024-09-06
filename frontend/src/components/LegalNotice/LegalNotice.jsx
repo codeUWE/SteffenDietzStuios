@@ -2,7 +2,6 @@ import React from "react";
 import "./LegalNotice.css";
 
 import { Accordion, AccordionItem as Item } from "@szhsin/react-accordion";
-import chevronDown from "../../assets/chevron-down.svg";
 
 const AccordionItem = ({ header, ...rest }) => {
 	const itemBtn = "itemBtn";
@@ -16,7 +15,11 @@ const AccordionItem = ({ header, ...rest }) => {
 			header={
 				<>
 					{header}
-					<img className="chevron" src={chevronDown} alt="Chevron Down" />
+					<img
+						className="chevron"
+						src="assets\chevron-down.svg"
+						alt="Chevron Down"
+					/>
 				</>
 			}
 			className="item"

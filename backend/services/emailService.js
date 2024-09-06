@@ -158,9 +158,9 @@ const sendConfirmationEmail = async (userEmail, userName, message) => {
 		<!DOCTYPE html>
 		<html lang="en">
 		<head>
-		  <meta charset="UTF-8" />
-		  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+			<meta charset="UTF-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		  <style>
 			body {
 			  font-family: Arial, sans-serif;
@@ -204,42 +204,42 @@ const sendConfirmationEmail = async (userEmail, userName, message) => {
 		  </style>
 		</head>
 		<body>
-		  <div class="email-container">
-			<table class="email-body" width="100%" cellpadding="0" cellspacing="0">
-			  <tr>
-				<td style="text-align: center; padding-bottom: 20px;">
-				  <!-- Logo in the center with padding -->
-				  <table width="150" cellpadding="0" cellspacing="0" align="center">
+			<div class="email-container">
+				<table class="email-body" width="100%" cellpadding="0" cellspacing="0">
 					<tr>
-					  <td>
-						<img src="https://res.cloudinary.com/da6xbhzea/image/upload/v1725620595/SteffenDietzLogo_rjh4yk.png" alt="Logo" width="150" style="display: block; width: 150px; height: auto;" />
-					  </td>
+					<td style="text-align: center; padding-bottom: 20px;">
+						<!-- Logo in the center with padding -->
+						<table width="150" cellpadding="0" cellspacing="0" align="center">
+						<tr>
+							<td>
+								<img src="https://res.cloudinary.com/da6xbhzea/image/upload/v1725620595/SteffenDietzLogo_rjh4yk.png" alt="Logo" width="150" style="display: block; width: 150px; height: auto;" />
+							</td>
+						</tr>
+				</table>
+				</td>
 					</tr>
-				  </table>
-				</td>
-			  </tr>
-			  <tr>
-				<td style="color: #333333; line-height: 1.6;">
-				  <h2 style="color: #211f1f;">Hello, ${userName}</h2>
-				  <p>Thank you for reaching out! I will get back to you as soon as possible.</p>
-				  <p>Here is a copy of your message:</p>
-				  <blockquote style="background-color: #f9f9f9; padding: 10px; border-left: 5px solid #4a90e2;">
-					${message}
-				  </blockquote>
-				  <p>Best regards,</p>
-				  <p>Steffen Dietz</p>
-				</td>
-			  </tr>
-			  <tr>
-				<td class="email-footer">
-				  <p>This is an automatic confirmation of your message sent to Steffen Dietz.</p>
-				</td>
-			  </tr>
-			</table>
-		  </div>
+					<tr>
+						<td style="color: #333333; line-height: 1.6;">
+							<h2 style="color: #211f1f;">Hello, ${userName}</h2>
+							<p>Thank you for reaching out! I will get back to you as soon as possible.</p>
+							<p>Here is a copy of your message:</p>
+							<blockquote style="background-color: #f9f9f9; padding: 10px; border-left: 5px solid #4a90e2;">
+								${message}
+							</blockquote>
+							<p>Best regards,</p>
+							<p>Steffen Dietz</p>
+						</td>
+					</tr>
+				<tr>
+					<td class="email-footer">
+						<p>This is an automatic confirmation of your message sent to Steffen Dietz.</p>
+					</td>
+				</tr>
+				</table>
+			</div>
 		</body>
 		</html>
-	  `,
+	`,
 	};
 
 	try {
