@@ -179,8 +179,8 @@
 
 @media only screen and (min-device-width: 834px) and (max-device-width: 1194px) and (orientation: portrait) {
 	.artwork {
-		width: 90%;
-		grid-template-columns: 1fr 3fr; /* Two equal columns */
+		width: 95%;
+		grid-template-columns: 2fr 4fr; /* Two equal columns */
 		grid-template-rows: 1fr; /* One row, both columns are in the same row */
 	}
 
