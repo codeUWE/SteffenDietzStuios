@@ -168,6 +168,13 @@ div.paintings div.paintingInfo p {
 	}
 }
 
+@media (min-width: 1680px) {
+	div.paintings {
+		margin: 3% auto 20px;
+		width: 36%;
+	}
+}
+
 @media (min-width: 1920px) {
 	div.paintings {
 		margin: 5% auto 20px;
