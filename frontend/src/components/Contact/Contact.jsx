@@ -112,18 +112,20 @@ function Contact() {
 		if (!validateForm()) return;
 
 		try {
-			const response = await fetch("/api/contact", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(formData),
-			});
+			const response = await fetch(
+				"https://steffendietzstuios.onrender.com/api/contact",
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(formData),
+				}
+			);
 
 			if (response.ok) {
 				setStatusMessage("Message successfully sent!");
-				setIsError(false); // Success - no error
-				// Reset the form data
+				setIsError(false);
 				setFormData({
 					name: "",
 					email: "",
@@ -133,12 +135,12 @@ function Contact() {
 				});
 			} else {
 				setStatusMessage("Error while sending the message. Please try again!");
-				setIsError(true); // An error occurred
+				setIsError(true);
 			}
 		} catch (error) {
 			console.error("Error:", error);
 			setStatusMessage("An error has occurred.");
-			setIsError(true); // An error occurred
+			setIsError(true);
 		}
 	};
 

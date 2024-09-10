@@ -11,8 +11,9 @@ function Artworks() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				// Fetch paintings data from your API endpoint
-				const response = await fetch("/api/paintings"); // Adjust the URL to your actual API route
+				const response = await fetch(
+					"https://steffendietzstuios.onrender.com/api/paintings"
+				);
 				const data = await response.json();
 				setPaintings(data); // Set the fetched data in state
 				setLoading(false); // Turn off loading state

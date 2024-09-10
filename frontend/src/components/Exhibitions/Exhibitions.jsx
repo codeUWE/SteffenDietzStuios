@@ -27,17 +27,17 @@ function Exhibitions() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				// Fetch the data from the API endpoint
-				const response = await fetch("/api/exhibitions");
+				// Ändere den API-Endpunkt zu deiner Render-URL
+				const response = await fetch(
+					"https://steffendietzstuios.onrender.com/api/exhibitions"
+				);
 				const data = await response.json();
 
 				const now = new Date();
 
-				// Set current date to the start of the day
 				const todayStart = new Date();
 				todayStart.setHours(0, 0, 0, 0);
 
-				// Filter and categorize events based on their end date
 				const upcoming = data.filter((event) => {
 					const endOfDay = new Date(event.endDate);
 					endOfDay.setHours(23, 59, 59, 999);
@@ -50,17 +50,6 @@ function Exhibitions() {
 					return endOfDay < todayStart;
 				});
 
-				// Sort upcoming events, prioritizing currently ongoing events
-				upcoming.sort((a, b) => {
-					const isACurrent = isCurrentEvent(a.startDate, a.endDate);
-					const isBCurrent = isCurrentEvent(b.startDate, b.endDate);
-
-					if (isACurrent && !isBCurrent) return -1; // Event A is ongoing, should appear first
-					if (!isACurrent && isBCurrent) return 1; // Event B is ongoing, should appear first
-					return new Date(a.startDate) - new Date(b.startDate); // Otherwise, sort by start date
-				});
-
-				// Update the state with the categorized events
 				setUpcomingEvents(upcoming);
 				setPreviousEvents(previous);
 			} catch (error) {
