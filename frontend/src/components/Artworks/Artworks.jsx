@@ -11,11 +11,16 @@ function Artworks() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await fetch(
-					"https://steffendietzstuios.onrender.com/api/paintings"
+				// Fetch paintings data from your API endpoint
+				const response = await fetch("/api/paintings");
+				let data = await response.json();
+
+				// Sort the paintings in the frontend based on the createdAt field (descending order)
+				data = data.sort(
+					(a, b) => new Date(b.createdAt) - new Date(a.createdAt)
 				);
-				const data = await response.json();
-				setPaintings(data); // Set the fetched data in state
+
+				setPaintings(data); // Set the fetched and sorted data in state
 				setLoading(false); // Turn off loading state
 			} catch (error) {
 				console.error("Error fetching paintings:", error);

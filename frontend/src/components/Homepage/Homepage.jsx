@@ -38,16 +38,46 @@ function Homepage() {
 				)}
 
 				{!loading && (
-					<div className="paintingContainer">
-						<div className="painting">
-							<img src="assets\Paintings\DUO.jpeg" alt="Paintings" />
+					<>
+						<div className="paintingContainer">
+							<div className="painting">
+								<img
+									src="assets\Paintings\incArtFair2024.JPEG"
+									alt="Person watching Paintings"
+								/>
+							</div>
+							<div className="paintingInfo">
+								<h2>INC art fair 2024</h2>
+								<p>6. - 8. September</p>
+							</div>
 						</div>
-						<div className="paintingInfo">
-							<h2>DUO</h2>
-							<h3>Steffen Dietz</h3>
-							<p>2024 // 180x130cm // Acryl auf Canvas</p>
+						<div className="paintingContainer">
+							<div className="painting">
+								<img
+									src="assets\Paintings\RacePainting.jpg"
+									alt="Person watching Paintings"
+								/>
+							</div>
+							<div className="paintingInfo">
+								<h2>RACE</h2>
+								<h3>Steffen Dietz</h3>
+								<p>2024 // 180x130cm // Acryl auf Canvas</p>
+							</div>
 						</div>
-					</div>
+						<div className="paintingContainer">
+							<div className="painting">
+								<img
+									src="assets\Paintings\DuoPainting.jpg"
+									alt="Person watching Paintings"
+								/>
+							</div>
+							<div className="paintingInfo">
+								<h2>DUO</h2>
+								<h3>Steffen Dietz</h3>
+								<p>2024 // 180x130cm // Acryl auf Canvas</p>
+							</div>
+						</div>
+					</>
 				)}
 			</div>
 		</>

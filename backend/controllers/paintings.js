@@ -2,7 +2,7 @@ const Painting = require("../models/Painting");
 
 const getPaintings = async (req, res) => {
 	try {
-		const paintings = await Painting.find({});
+		const paintings = await Painting.find({}).sort({ createdAt: -1 });
 		res.json(paintings);
 	} catch (error) {
 		console.log(error);
