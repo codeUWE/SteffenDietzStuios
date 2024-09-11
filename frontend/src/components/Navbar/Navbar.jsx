@@ -156,12 +156,6 @@ function Navbar() {
 						<RiHomeLine />
 					</li>
 					<li
-						className={isActive("/about")}
-						onClick={() => handleLinkClick("/about")}
-					>
-						ABOUT
-					</li>
-					<li
 						className={isActive("/artworks")}
 						onClick={() => handleLinkClick("/artworks")}
 					>
@@ -172,6 +166,12 @@ function Navbar() {
 						onClick={() => handleLinkClick("/exhibitions")}
 					>
 						EXHIBITIONS
+					</li>
+					<li
+						className={isActive("/about")}
+						onClick={() => handleLinkClick("/about")}
+					>
+						ABOUT
 					</li>
 				</ul>
 				<div className="sideActions">

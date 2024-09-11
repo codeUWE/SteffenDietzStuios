@@ -31,7 +31,7 @@ div.exhibitions div.exhibitionTitle {
 }
 
 div.exhibitions div.exhibitionTitle h2 {
-	font-size: 2rem;
+	font-size: 1.4rem;
 	font-weight: 400;
 	margin-bottom: 1rem;
 }
@@ -70,7 +70,7 @@ div.upcoming div.upcomingEvent div.upcomingMain div.upcomingInfo {
 div.upcoming div.upcomingEvent div.upcomingMain div.upcomingInfo h2 {
 	font-size: 1.2rem;
 	color: var(--upcoming-colorTitle);
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	margin: 0;
 	overflow-wrap: break-word;
 }
@@ -211,7 +211,7 @@ div.previous div.previousEvent div.previousMain div.previousInfo {
 div.previous div.previousEvent div.previousMain div.previousInfo h2 {
 	font-size: 1.2rem;
 	color: var(--previous-colorTitle);
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	margin: 0;
 	overflow-wrap: break-word;
 }

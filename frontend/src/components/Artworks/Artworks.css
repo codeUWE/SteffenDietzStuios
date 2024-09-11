@@ -1,6 +1,6 @@
 /* Container for the entire Artworks section */
 .artworks-container {
-	width: 90%;
+	width: 100%;
 	margin: 0 auto;
 	display: grid;
 }
@@ -12,11 +12,11 @@
 	grid-template-columns: 1fr; /* One column on mobile by default */
 	grid-template-rows: auto auto; /* Two rows: one for the image, one for the info */
 	gap: 1rem; /* Add some gap between rows */
-	margin: 10rem 0;
+	margin: 3rem 0;
 }
 
 .artwork:first-child {
-	margin-top: 25%;
+	margin-top: 14%;
 }
 
 /* Image container within each artwork block */
@@ -32,7 +32,11 @@
 
 /* Information container within each artwork block */
 .artwork-info {
-	width: 100%;
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	text-align: left;
 	line-height: 115%;
 	color: rgb(149, 149, 149);

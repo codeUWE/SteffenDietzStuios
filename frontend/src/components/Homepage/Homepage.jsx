@@ -47,8 +47,8 @@ function Homepage() {
 								/>
 							</div>
 							<div className="paintingInfo">
-								<h2>INC art fair 2024</h2>
-								<p>6. - 8. September</p>
+								<h2>INC art fair Hamburg</h2>
+								<p>06.-08. September 2024</p>
 							</div>
 						</div>
 						<div className="paintingContainer">

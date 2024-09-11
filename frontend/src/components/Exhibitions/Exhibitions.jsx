@@ -65,7 +65,7 @@ function Exhibitions() {
 			<div className="exhibitions">
 				{/* Section for Upcoming Events */}
 				<div className="upcoming exhibitionTitle">
-					<h2>Upcoming Events</h2>
+					<h2>Upcoming</h2>
 					<div className="upcomingExhibitions">
 						{upcomingEvents.map((event) => (
 							<div key={event._id} className="upcomingEvent">
@@ -129,7 +129,7 @@ function Exhibitions() {
 
 				{/* Section for Previous Events */}
 				<div className="previous exhibitionTitle">
-					<h2>Previous Events</h2>
+					<h2>Previous</h2>
 					<div className="previousExhibitions">
 						{previousEvents.map((event) => (
 							<div key={event._id} className="previousEvent">
