@@ -12,7 +12,9 @@ function Artworks() {
 		const fetchData = async () => {
 			try {
 				// Fetch paintings data from your API endpoint
-				const response = await fetch("/api/paintings");
+				const response = await fetch(
+					"https://steffendietzstuios.onrender.com/api/paintings"
+				);
 				let data = await response.json();
 
 				// Sort the paintings in the frontend based on the createdAt field (descending order)
